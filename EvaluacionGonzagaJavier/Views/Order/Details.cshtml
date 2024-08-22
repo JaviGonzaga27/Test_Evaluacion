@@ -1,0 +1,51 @@
+﻿@model EvaluacionGonzagaJavier.Models.Order
+@{
+    ViewData["Title"] = "Detalles de Orden";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">Detalles de Orden</h2>
+            <a asp-action="Edit" asp-route-id="@Model.OrderId" class="btn btn-light btn-sm">
+                <i class="bi bi-pencil"></i> Editar
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProductName)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProductName)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.UnitPrice)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.UnitPrice)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Quantity)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Quantity)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Discount)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Discount)</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Subtotal)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Subtotal)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.DiscountAmount)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.DiscountAmount)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Total)</dt>
+                        <dd class="col-sm-8 font-weight-bold">@Html.DisplayFor(model => model.Total)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-light">
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Volver a la lista
+            </a>
+        </div>
+    </div>
+</div>
